@@ -1,0 +1,17 @@
+History of prompts and messages:
+
+1)
+prompt:
+"conda env export | grep numpy, instead of just numpy", how can i grep all the dependencies and their versions at the command line with something similar?
+
+output: 
+conda env export --no-builds | grep -v '^(name|channels|prefix):'
+This command uses the --no-builds flag to remove the OS-specific build hash (e.g., _h12345) while retaining the package name and version number (package=version). It then uses grep -v (invert match) to exclude the lines that are not part of the package list.
+
+2)
+prompt: how can I check the python version my ipykernel is using in my jupyter notebook
+
+output:
+import sys
+print(sys.version)
+
