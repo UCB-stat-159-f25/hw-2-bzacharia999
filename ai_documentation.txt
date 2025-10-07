@@ -15,3 +15,15 @@ output:
 import sys
 print(sys.version)
 
+3)
+prompt: i used git tag to create a tag after i got some work done, but when I pushed it, I couldnt see the tag in my remote repository. Maybe Im looking at the wrong place but where can I usually find my tags?
+
+output:
+You can't see your tag in the remote repository because git push does not automatically push tags. Tags are treated as separate objects from your commits and must be pushed explicitly.
+
+Your issue is almost certainly due to missing the dedicated push command for tags.
+
+To Push All Local Tags:
+This command pushes every tag you have locally that doesn't already exist on the remote:
+git push origin --tags
+
